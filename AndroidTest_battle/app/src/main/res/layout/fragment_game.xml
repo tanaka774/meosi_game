@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.support.v4.content.ContextCompat"/>
+        <variable
+            name="gameViewModel"
+            type="com.example.androidtest_battle.GameViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/numberL2"
+            app:layout_constraintEnd_toStartOf="@+id/numberM1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberL2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/numberL3"
+            app:layout_constraintEnd_toStartOf="@+id/numberM2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberL1" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberL3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/stop_buttonL"
+            app:layout_constraintEnd_toStartOf="@+id/numberM3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberL2" />
+
+        <Button
+            android:id="@+id/stop_buttonL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> gameViewModel.onStopL()}"
+            android:enabled="@{gameViewModel.stopLVisible}"
+            android:text="@string/stop_button_name"
+            app:layout_constraintBottom_toTopOf="@+id/conglat_text"
+            app:layout_constraintEnd_toStartOf="@+id/stop_buttonM"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberL3"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberM1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/numberM2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberM2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/numberM3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberM1" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberM3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/stop_buttonM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberM2" />
+
+        <Button
+            android:id="@+id/stop_buttonM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> gameViewModel.onStopM()}"
+            android:text="@string/stop_button_name"
+            app:layout_constraintBottom_toTopOf="@+id/conglat_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberM3" />
+
+        <ImageView
+            android:id="@+id/numberR1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/numberR2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numberM1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:layout_height="90dp"
+            tools:layout_width="90dp" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberR2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/numberR3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberM2"
+            app:layout_constraintTop_toBottomOf="@+id/numberR1" />
+
+        <ImageView
+            tools:layout_width="90dp"
+            tools:layout_height="90dp"
+            android:id="@+id/numberR3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/image_size"
+            android:maxHeight="@dimen/image_size"
+            android:padding="1dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/stop_buttonR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberM3"
+            app:layout_constraintTop_toBottomOf="@+id/numberR2" />
+
+        <Button
+            android:id="@+id/stop_buttonR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> gameViewModel.onStopR()}"
+            android:text="@string/stop_button_name"
+            app:layout_constraintBottom_toTopOf="@+id/conglat_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/stop_buttonM"
+            app:layout_constraintTop_toBottomOf="@+id/numberR3"
+            app:layout_constraintVertical_bias="0.499" />
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> gameViewModel.onStartGame()}"
+            android:text="@string/start_button_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stop_buttonM" />
+
+        <TextView
+            android:id="@+id/conglat_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@{gameViewModel.conglatStr}"
+            android:textAlignment="center"
+            android:textColor="#E91E63"
+            android:textSize="24sp"
+            android:visibility="@{gameViewModel.conglatVis}"
+            app:layout_constraintBottom_toTopOf="@+id/start_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stop_buttonM" />
+
+        <Switch
+            android:id="@+id/switch_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加速"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/start_button"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <TextView
+            android:id="@+id/text_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sum_count"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toEndOf="@+id/switch_speed"
+            app:layout_constraintTop_toBottomOf="@+id/start_button"
+            app:layout_constraintVertical_bias="0.75" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

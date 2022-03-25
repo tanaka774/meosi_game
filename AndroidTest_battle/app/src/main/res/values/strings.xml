@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AndroidTest_</string>
+    <string name="random_number">\?</string>
+    <string name="stop_button_name">STOP</string>
+    <string name="start_button_name">START</string>
+    <string name="reset_button_name">RESET</string>
+    <string name="move_act1_button">次に進む</string>
+    <string name="playButton">PLAY</string>
+    <string name="start_text">目押しビンゴゲーム</string>
+    <string name="rule_text">遊び方</string>
+    <string name="howtoplay">
+        空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n
+        空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n
+        空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空\n空
+    </string>
+    <string name="sum_count">ビンゴ回数：@{gameViewModel.sumCount.toString()}</string>
+</resources>
